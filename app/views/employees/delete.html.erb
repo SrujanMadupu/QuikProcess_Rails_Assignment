@@ -1,0 +1,16 @@
+<% @page_title = "Delete Employee" %>
+
+
+<div class="col-sm-6 col-sm-offset-3">
+   <%= form_for(:employee, :url=>{:action=>'destroy',:id=>@employee.id}) do |f| %>
+      <p class="text-danger">Are you sure want to permanently fire this employee?</p>
+      <h4 class="reference-name"><%=@employee.name %></h4>
+
+      <div class="form-buttons">
+      	<%= submit_tag("Delete Employee") %>
+      </div>
+   <% end %>
+
+   <p class="btn btn-link btn-lg btn-block"><%= link_to("<<Back to list",{:action=>'list'},:class=>'back-link') %> </p>
+
+</div>

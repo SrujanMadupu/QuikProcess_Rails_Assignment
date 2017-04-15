@@ -1,0 +1,29 @@
+    <% @page_title = "Employees list" %>
+    <div class="container"> 
+      <table class="table table-hover">
+         <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>name</th>
+              <th>company</th>
+              <th>email</th>
+              <th>phone</th>
+            </tr>
+         </thead>
+         <tbody>
+           <% @employees.each do |employee| %>
+              <tr>
+                <td><%= %></td>
+                <td><%=employee.name %></td>
+                <td><%=employee.company%></td>
+                <td class="center"><%=employee.email%></td>
+                <td><%=employee.phone%></td>
+                <td class="actions">
+                  <p class="btn btn-default"><%=link_to("Detail",{:action=>'show',:id=>employee.id},:class=>'action show') %> </p>
+                </td>
+              </tr>
+           <%end%>
+         </tbody>
+         <p class="btn btn-link btn-lg btn-block"><%=link_to("Create New Employee",{:action=>'new'},:class=>'action new') %></p>
+      </table>
+    </div>    

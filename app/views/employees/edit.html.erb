@@ -1,0 +1,14 @@
+<% @page_title = "Editing Employee" %>
+<%= link_to("<<Back to List",{:action=>'list'},:class=>'back-link') %>
+<div class="employee edit">
+   <h2>Create employee</h2>
+   <%= form_for(:employee, :url => {:action => 'update',:id =>@employee.id}) do |f| %>
+     
+    <%=render(:partial => "form",:locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      	<%= submit_tag("Update Employee") %>
+    </div>
+   <% end %>
+
+</div>   

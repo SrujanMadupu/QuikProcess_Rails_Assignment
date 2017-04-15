@@ -1,0 +1,15 @@
+ <% @page_title = "Create Employee" %>
+
+<div class="employee new">
+   <h2>Create employee</h2>
+   <%= form_for(:employee, :url => {:action => 'create'}) do |f| %>
+     
+     <%=render(:partial => "form",:locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      	<%= submit_tag("Create New Employee") %>
+    </div>
+   <% end %>
+   <p class="btn btn-link btn-lg btn-block"><%= link_to("<<Back to List",{:action=>'list'},:class=>'back-link') %></p>
+
+</div>   

@@ -1,0 +1,36 @@
+   <% @page_title = "Employee detail" %>
+   <%= link_to("<<Back to List",{:action=>'list'},:class=>'back-link') %>
+    <div class="employee show">
+      <h2>Detail Employee</h2>
+      <table class="table table-hover"> 
+       <tbody>
+         <tr>
+           <th>Name</th>
+           <td><%= @employee.name %></td>
+         </tr>
+         <tr>
+           <th>Company</th>
+           <td><%= @employee.company %></td>
+         </tr>
+         <tr>
+            <th>Email</th>
+            <td><%= @employee.email %></td>
+          </tr>
+          <tr>
+             <th>Phone</th>
+             <td><%= @employee.phone %></td>
+           </tr>
+         <tr>
+           <th>Created</th>
+           <td><%=@employee.created_at%></td>
+         </tr>
+         <tr>
+           <th>Updated</th>
+           <td><%=@employee.updated_at%></td>
+         </tr>
+        </tbody>
+      </table>
+      <p type="button" class="btn btn-default btn-lg btn-block "><%=link_to("Edit",{:action=>'edit',:id=>@employee.id},:class=>'action edit') %></p>
+      <p type="button" class="btn btn-danger btn-lg btn-block"><%=link_to("Delete",{:action => 'delete',:id=>@employee.id},:class=>'action edit') %></p>
+
+    </div>
